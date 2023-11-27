@@ -5,11 +5,18 @@ const getCountrieId = async (id) => {
     throw new Error("El id debe ser de 3 letras");
   }
   id = id.toUpperCase();
-  const countrie = await Country.findByPk(id, { include: Activity });
-  if (!countrie) {
+  const country = await Country.findByPk(id, {
+    include: [
+      {
+        model: Activity,
+        through: { attributes: [] },
+      },
+    ],
+  });
+  if (!country) {
     throw new Error("Id no valido");
   }
-  return countrie;
+  return country;
 };
 
 module.exports = getCountrieId;

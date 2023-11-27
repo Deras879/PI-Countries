@@ -1,16 +1,16 @@
 const { Country } = require("../db");
 
-const getCountrieName = async (name) => {
+const getCountryName = async (name) => {
   if (typeof name !== "string") {
     throw new Error("No se proporcionó el nombre");
   }
   name = name.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
 
-  const countrie = await Country.findAll({ where: { name } });
-  if (!countrie.length) {
+  const country = await Country.findAll({ where: { name } });
+  if (!country.length) {
     throw new Error("El pais no existe");
   }
-  return countrie;
+  return country;
 };
 
-module.exports = getCountrieName;
+module.exports = getCountryName;
