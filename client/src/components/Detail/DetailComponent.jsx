@@ -10,7 +10,6 @@ function Detail() {
 
   useEffect(() => {
     {
-      console.log(id);
     }
     axios(`http://localhost:3001/countries/${id}`).then(({ data }) => {
       if (data.id) {
@@ -21,7 +20,6 @@ function Detail() {
     });
     return setCountry(null);
   }, [id]);
-  console.log(country);
   return <div>{country ? <img src={country.image} alt="" /> : null}</div>;
 }
 

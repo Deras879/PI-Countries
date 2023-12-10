@@ -6,10 +6,7 @@ import Home from "./views/Home page/Home";
 import Form from "./views/Form page/Form";
 import Detail from "./views/Detail page/Detail";
 import NavBar from "./components/NavBar/NavBar";
-
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div>
       <NavBar></NavBar>

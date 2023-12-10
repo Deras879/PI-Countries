@@ -7,7 +7,6 @@ function Detail() {
   return (
     <div>
       <DetailComponent />
-      <h1>Este es el Detail page de {id}</h1>
     </div>
   );
 }
