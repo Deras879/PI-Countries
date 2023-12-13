@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountries } from "../../redux/actions";
+import style from "./Home.module.css";
 
 function Home() {
   const [countriesData, setCountriesData] = useState([]);
@@ -34,12 +35,11 @@ function Home() {
   useEffect(() => {}, [searchCountries]);
 
   return (
-    <div>
-      <h1>Este es el home</h1>
-      <Countries countries={searchCountries} />
+    <div className={style.container}>
       <Link to="/Form">
         <button>go Form</button>
       </Link>
+      <Countries countries={searchCountries} />
     </div>
   );
 }

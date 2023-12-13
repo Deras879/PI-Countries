@@ -1,10 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountry, getCountries } from "../../redux/actions";
+import style from "./Navbar.module.css";
 
 function NavBar() {
+  const location = useLocation();
+  const rutaValida = /^\/(Home|Form|Activities|(Detail\/\d+))$/;
+
+  if (!rutaValida.test(location.pathname)) {
+    return null;
+  }
+
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
   const handleChange = (event) => {
@@ -19,16 +27,18 @@ function NavBar() {
     dispatch(getCountry(id));
   };
   return (
-    <div>
-      <Link to="/Home">
-        <button>Home</button>
-      </Link>
-      <Link to="/Activities">
-        <button>Activities</button>
-      </Link>
-      <Link to="/Form">
-        <button>Create Activity</button>
-      </Link>
+    <div className={style.container}>
+      <div>
+        <Link to="/Home">
+          <button>Home</button>
+        </Link>
+        <Link to="/Activities">
+          <button>Activities</button>
+        </Link>
+        <Link to="/Form">
+          <button>Create Activity</button>
+        </Link>
+      </div>
       <div>
         <input
           type="text"
