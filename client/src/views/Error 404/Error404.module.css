@@ -1,5 +1,6 @@
 .img {
-  margin: 0;
-  padding: 0;
-  background-repeat: no-repeat;
+  width: 97.3vw;
+  max-height: 98vh;
+  position: absolute;
+  left: 35px;
 }
