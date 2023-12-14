@@ -1,0 +1,21 @@
+.container {
+  border: 5px solid black;
+  margin: 5px;
+  max-width: 365px;
+  max-height: 350px;
+}
+
+.img {
+  margin: 5px;
+  width: 350px;
+  height: 230px;
+  border: 3px solid blue;
+}
+
+h3 {
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-size: 18.5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #ffffffab;
+}

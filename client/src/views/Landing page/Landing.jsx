@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Landing() {
   return (
-    <div>
+    <div className={style.container}>
       <Link to="/Home">
         <button className={style.cssbuttons}>
           Go Home
