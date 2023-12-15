@@ -7,7 +7,7 @@ import style from "./Navbar.module.css";
 
 function NavBar() {
   const location = useLocation();
-  const rutaValida = /^\/(Home|Form|Activities|(Detail\/\d+))$/;
+  const rutaValida = /^\/(Home|Form|Activities|(Detail\/\w+))$/;
 
   if (!rutaValida.test(location.pathname)) {
     return null;

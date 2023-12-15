@@ -7,6 +7,7 @@ import Form from "./views/Form page/Form";
 import Detail from "./views/Detail page/Detail";
 import NavBar from "./components/NavBar/NavBar";
 import Error404 from "./views/Error 404/Error404";
+import Activities from "./views/Activities/Activities";
 function App() {
   return (
     <div>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/Form" element={<Form />} />
         <Route path="/Detail/:id" element={<Detail />} />
+        <Route path="/Activities" element={<Activities />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </div>

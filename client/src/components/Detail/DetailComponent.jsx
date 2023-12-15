@@ -20,7 +20,27 @@ function Detail() {
     });
     return setCountry(null);
   }, [id]);
-  return <div>{country ? <img src={country.image} alt="" /> : null}</div>;
+  return (
+    <div>
+      {country ? (
+        <div>
+          <div>
+            <h1>{country.name}</h1>
+            <h1>ID: {country.id}</h1>
+            <img src={country.image} alt="" />
+            <p>Capital: {country.capital}</p>
+            <p>Population: {country.population}</p>
+            <p>Region: {country.subRegion}</p>
+            <p>
+              Area: {country.area} kms<sup>2</sup>
+            </p>
+          </div>
+        </div>
+      ) : (
+        "Cargando..."
+      )}
+    </div>
+  );
 }
 
 export default Detail;

@@ -34,6 +34,7 @@ h3 {
   color: white;
   transition: 0.2s ease-in-out;
   margin: 15px;
+  pointer-events: auto;
 }
 
 .img {
@@ -76,12 +77,14 @@ h3 {
 
 .card:hover > .textBox {
   opacity: 1;
+  pointer-events: none;
 }
 
 .card:hover > .img {
   height: 65%;
   filter: opacity(0.5) blur(7px);
   animation: anim 3s infinite;
+  pointer-events: auto;
 }
 
 @keyframes anim {
