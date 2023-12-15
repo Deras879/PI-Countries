@@ -69,9 +69,9 @@ function Country(props) {
       </svg>
       <div className={style.textBox}>
         {" "}
-        <p className="text head">Ethereum</p>
-        <span>Cryptocurrency</span>
-        <p className={style.text_price}>1.654,34€</p>
+        <p className={style.name}>{props.name}</p>
+        <span>{props.capital}</span>
+        <p className={style.continent}>{props.continent}</p>
       </div>
     </div>
   );

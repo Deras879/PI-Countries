@@ -61,16 +61,16 @@ h3 {
   font-weight: bold;
 }
 
-.textBox > .head {
-  font-size: 20px;
+.textBox > .name {
+  font-size: 40px;
 }
 
-.textBox > .price {
-  font-size: 17px;
+.textBox > .continent {
+  font-size: 40px;
 }
 
 .textBox > span {
-  font-size: 12px;
+  font-size: 30px;
   color: lightgrey;
 }
 
@@ -80,7 +80,7 @@ h3 {
 
 .card:hover > .img {
   height: 65%;
-  filter: blur(7px);
+  filter: opacity(0.5) blur(7px);
   animation: anim 3s infinite;
 }
 
