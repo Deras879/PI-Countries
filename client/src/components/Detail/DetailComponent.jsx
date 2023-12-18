@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import style from "./DetailComponent.module.css";
 
 function Detail() {
   const { id } = useParams();
@@ -21,23 +22,25 @@ function Detail() {
     return setCountry(null);
   }, [id]);
   return (
-    <div>
+    <div className={style.majorContainer}>
       {country ? (
-        <div>
-          <div>
-            <h1>{country.name}</h1>
+        <div className={style.container}>
+          <div className={style.details1}>
+            <h1>Nombre: {country.name}</h1>
             <h1>ID: {country.id}</h1>
-            <img src={country.image} alt="" />
+          </div>
+          <img src={country.image} alt="" />
+          <div className={style.details2}>
             <p>Capital: {country.capital}</p>
-            <p>Population: {country.population}</p>
-            <p>Region: {country.subRegion}</p>
+            <p>Población: {country.population}</p>
+            <p>Región: {country.subRegion}</p>
             <p>
-              Area: {country.area} kms<sup>2</sup>
+              Área: {country.area} kms<sup>2</sup>
             </p>
           </div>
         </div>
       ) : (
-        "Cargando..."
+        <h1>"Cargando..."</h1>
       )}
     </div>
   );

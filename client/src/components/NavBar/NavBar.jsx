@@ -39,12 +39,9 @@ function NavBar() {
           <button>Create Activity</button>
         </Link>
       </div>
-      <div>
-        <input
-          type="text"
-          placeholder="Id o nombre del pais"
-          onChange={handleChange}
-        />
+      <div className={style.inputBox}>
+        <input type="text" onChange={handleChange} />
+        <span>Id o nombre del pais</span>
       </div>
     </div>
   );

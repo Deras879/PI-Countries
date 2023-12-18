@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://th.bing.com/th/id/OIG.1R..CXVwbfoV_6FAzZHA?w=1024&h=1024&rs=1&pid=ImgDetMain");
+  justify-content: space-evenly;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.435);
+  background-blend-mode: multiply;
+}
+
+p {
+  font-size: 40px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.details1 {
+  background-color: rgba(250, 235, 215, 0.612);
+  font-size: 25px;
+}
+
+.details2 {
+  background-color: rgba(250, 235, 215, 0.612);
+  font-size: 25px;
+}
+
+img {
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+img:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+  filter: saturate(2);
+}

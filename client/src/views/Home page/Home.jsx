@@ -36,9 +36,6 @@ function Home() {
 
   return (
     <div className={style.container}>
-      <Link to="/Form">
-        <button>go Form</button>
-      </Link>
       <Countries countries={searchCountries} />
     </div>
   );

@@ -7,7 +7,7 @@ function Landing() {
     <div className={style.container}>
       <Link to="/Home">
         <button className={style.cssbuttons}>
-          Go Home
+          Enter
           <div className={style.icon}>
             <svg
               height="24"
