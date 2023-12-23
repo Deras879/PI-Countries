@@ -1,3 +1,0 @@
-const validations = () => {
-  const errors = {};
-};

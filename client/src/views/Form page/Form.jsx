@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { validations } from "./validations";
 function Form() {
   const paises = useSelector((state) => state.allCountries);
   const [data, setData] = useState({});
@@ -9,7 +10,7 @@ function Form() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
-    setErrors({ ...errors, [name]: value });
+    setErrors(validations({ ...data, [name]: value }));
   };
 
   const [continente, setContinente] = useState("");
@@ -35,7 +36,8 @@ function Form() {
     }
     setPais(valor);
 
-    setData({ ...data, pais: valor });
+    setData({ ...data, country: valor });
+    setErrors(validations({ ...data, country: valor }));
   };
 
   const [season, setSeason] = useState("");
@@ -57,18 +59,31 @@ function Form() {
     await setHora(event.target.value.toString().padStart(2, "0"));
     await setSeccionHora(`${event.target.value}:${minutos}:00`);
 
-    setData({ ...data, seccionHora: `${event.target.value}:${minutos}:00` });
+    setData({ ...data, hour: `${event.target.value}:${minutos}:00` });
+    setErrors(
+      validations({
+        ...data,
+        hour: `${event.target.value}:${minutos}:00`,
+      })
+    );
   };
 
   const handleMinutosChange = async (event) => {
     await setMinutos(event.target.value.toString().padStart(2, "0"));
     await setSeccionHora(`${hora}:${event.target.value}:00`);
 
-    setData({ ...data, seccionHora: `${hora}:${event.target.value}:00` });
+    setData({ ...data, hour: `${hora}:${event.target.value}:00` });
+    setErrors(
+      validations({
+        ...data,
+        hour: `${hora}:${event.target.value}:00`,
+      })
+    );
   };
 
   const handleNameChange = (event) => {
     setData({ ...data, name: event.target.value });
+    setErrors(validations({ ...data, name: event.target.value }));
   };
   return (
     <div>
@@ -80,19 +95,23 @@ function Form() {
             placeholder="Nombre"
             onChange={handleNameChange}
           />
+          {errors.name && <p>{errors.name}</p>}
         </div>
 
-        <label htmlFor="">
-          Dificultad
-          <select name="difficulty" id="" onChange={seleccionDificultad}>
-            <option value="">Elige una dificultad</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </label>
+        <div>
+          <label htmlFor="">
+            Dificultad
+            <select name="difficulty" id="" onChange={seleccionDificultad}>
+              <option value="">Elige una dificultad</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </label>
+          {errors.difficulty && <p>{errors.difficulty}</p>}
+        </div>
 
         <div>
           <label>
@@ -116,6 +135,7 @@ function Form() {
               min="0"
               max="59"
             />
+            {errors.hour && <p>{errors.hour}</p>}
           </label>
         </div>
         <div>
@@ -129,32 +149,38 @@ function Form() {
               <option value="Invierno">Invierno</option>
             </select>
           </label>
-          <div>
-            <label htmlFor="">
-              Continente
-              <select name="continent" id="" onChange={seleccionContinente}>
-                <option value="">- seleccione continente -</option>
-                <option value="Americas">América</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europa</option>
-                <option value="Oceania">Oceania</option>
-              </select>
-            </label>
-          </div>
-          <div>
-            <label htmlFor="">
-              Pais
-              <select multiple name="country" id="" onChange={seleccionPais}>
-                <option value="">- seleccione pais -</option>
-                {paisesContinente.map((pais) => (
-                  <option key={pais.id} value={pais.name}>
-                    {pais.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
+          {errors.season && <p>{errors.season}</p>}
         </div>
+
+        <div>
+          <label htmlFor="">
+            Continente
+            <select name="continent" id="" onChange={seleccionContinente}>
+              <option value="">- seleccione continente -</option>
+              <option value="Americas">América</option>
+              <option value="Asia">Asia</option>
+              <option value="Europe">Europa</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          </label>
+          {errors.continent && <p>{errors.continent}</p>}
+        </div>
+
+        <div>
+          <label htmlFor="">
+            Pais
+            <select multiple name="country" id="" onChange={seleccionPais}>
+              <option value="">- seleccione pais -</option>
+              {paisesContinente.map((pais) => (
+                <option key={pais.id} value={pais.name}>
+                  {pais.name}
+                </option>
+              ))}
+            </select>
+          </label>
+          {errors.country && <p>{errors.country}</p>}
+        </div>
+
         <button type="submit">Submit</button>
       </form>
     </div>
