@@ -2,10 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { validations } from "./validations";
+import axios from "axios";
 function Form() {
   const paises = useSelector((state) => state.allCountries);
   const [data, setData] = useState({});
   const [errors, setErrors] = useState({});
+  const initialState = {};
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,8 +38,8 @@ function Form() {
     }
     setPais(valor);
 
-    setData({ ...data, country: valor });
-    setErrors(validations({ ...data, country: valor }));
+    setData({ ...data, country_ids: valor });
+    setErrors(validations({ ...data, country_ids: valor }));
   };
 
   const [season, setSeason] = useState("");
@@ -59,11 +61,11 @@ function Form() {
     await setHora(event.target.value.toString().padStart(2, "0"));
     await setSeccionHora(`${event.target.value}:${minutos}:00`);
 
-    setData({ ...data, hour: `${event.target.value}:${minutos}:00` });
+    setData({ ...data, duration: `${event.target.value}:${minutos}:00` });
     setErrors(
       validations({
         ...data,
-        hour: `${event.target.value}:${minutos}:00`,
+        duration: `${event.target.value}:${minutos}:00`,
       })
     );
   };
@@ -72,11 +74,11 @@ function Form() {
     await setMinutos(event.target.value.toString().padStart(2, "0"));
     await setSeccionHora(`${hora}:${event.target.value}:00`);
 
-    setData({ ...data, hour: `${hora}:${event.target.value}:00` });
+    setData({ ...data, duration: `${hora}:${event.target.value}:00` });
     setErrors(
       validations({
         ...data,
-        hour: `${hora}:${event.target.value}:00`,
+        duration: `${hora}:${event.target.value}:00`,
       })
     );
   };
@@ -85,9 +87,39 @@ function Form() {
     setData({ ...data, name: event.target.value });
     setErrors(validations({ ...data, name: event.target.value }));
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (errors[0]) {
+      return window.alert("Faltan llenar campos");
+    } else {
+      console.log(data);
+      axios
+        .post("http://localhost:3001/activities", data, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((res) => {
+          setData({});
+          setContinente("");
+          setPaisesContinente([]);
+          setPais("");
+          setSeason("");
+          setDificultad("");
+          setHora("");
+          setMinutos("");
+          setSeccionHora(`${hora}:${minutos}:00`);
+          window.alert("actividad creada correctamente");
+        })
+        .catch((err) => {
+          window.alert(err.response.data.error);
+        });
+    }
+  };
   return (
     <div>
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <div>
           <input
             type="text"
@@ -172,7 +204,7 @@ function Form() {
             <select multiple name="country" id="" onChange={seleccionPais}>
               <option value="">- seleccione pais -</option>
               {paisesContinente.map((pais) => (
-                <option key={pais.id} value={pais.name}>
+                <option key={pais.id} value={pais.id}>
                   {pais.name}
                 </option>
               ))}

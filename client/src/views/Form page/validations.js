@@ -2,8 +2,8 @@ const validations = ({
   name,
   difficulty,
   season,
-  country,
-  hour,
+  country_ids,
+  duration,
   continent,
 }) => {
   const errors = {};
@@ -17,24 +17,16 @@ const validations = ({
   if (!season) {
     errors.season = "La temporada es requerida";
   }
-  if (!country) {
+  if (!country_ids) {
     errors.country = "El pais es requerido";
   }
-  if (!hour) {
+  if (!duration) {
     errors.hour = "La sección de hora es requerida";
   }
   if (!continent) {
     errors.continent = "El continente es requerido";
   }
 
-  console.log({
-    name,
-    difficulty,
-    season,
-    country,
-    hour,
-    continent,
-  });
   return errors;
 };
 
