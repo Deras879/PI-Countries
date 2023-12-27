@@ -86,6 +86,9 @@ h3 {
   animation: anim 3s infinite;
   pointer-events: auto;
 }
+.card:hover {
+  transform: scale(1.04) rotate(-1deg);
+}
 
 @keyframes anim {
   0% {
@@ -99,8 +102,4 @@ h3 {
   100% {
     transform: translateY(0);
   }
-}
-
-.card:hover {
-  transform: scale(1.04) rotate(-1deg);
 }

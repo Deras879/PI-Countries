@@ -1,0 +1,7 @@
+.current {
+  color: red;
+}
+
+.is_diable {
+  disabled: true;
+}

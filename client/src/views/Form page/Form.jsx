@@ -110,6 +110,7 @@ function Form() {
           setHora("");
           setMinutos("");
           setSeccionHora(`${hora}:${minutos}:00`);
+
           window.alert("actividad creada correctamente");
         })
         .catch((err) => {
