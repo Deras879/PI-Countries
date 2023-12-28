@@ -81,13 +81,10 @@ h3 {
 }
 
 .card:hover > .img {
-  height: 65%;
+  height: 29%;
   filter: opacity(0.5) blur(7px);
   animation: anim 3s infinite;
   pointer-events: auto;
-}
-.card:hover {
-  transform: scale(1.04) rotate(-1deg);
 }
 
 @keyframes anim {
