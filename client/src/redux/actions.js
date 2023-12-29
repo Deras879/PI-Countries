@@ -3,6 +3,10 @@ const endpoint = "http://localhost:3001/";
 export const GET_ALL_COUNTRIES = "GET_ALL_COUNTRIES";
 export const SEARCH_COUNTRY = "SEARCH_COUNTRY";
 export const GET_ACTIVITIES = "GET_ACTIVITIES";
+export const FILTER_ACTIVITY = "FILTER_ACTIVITY";
+export const FILTER_CONTINENT = "FILTER_CONTINENT";
+export const ORDER_ALF = "ORDER_ALF";
+export const ORDER_POPULATION = "ORDER_POPULATION";
 
 export const getCountries = () => {
   try {
@@ -15,7 +19,7 @@ export const getCountries = () => {
       });
     };
   } catch (error) {
-    window.alert(error.message);
+    new Error(error.message);
   }
 };
 
@@ -37,7 +41,7 @@ export const getCountry = (id) => {
       };
     }
   } catch (error) {
-    windows.alert(error.message);
+    new Error(error.message);
   }
 };
 
@@ -52,6 +56,38 @@ export const getActivities = () => {
       });
     };
   } catch (error) {
-    window.alert(error.message);
+    new Error(error.message);
+  }
+};
+
+export const filterCountriesActivity = (difficulty) => {
+  try {
+    return { type: FILTER_ACTIVITY, payload: difficulty };
+  } catch (error) {
+    new Error(error.message);
+  }
+};
+
+export const filterCountriesContinent = (continent) => {
+  try {
+    return { type: FILTER_CONTINENT, payload: continent };
+  } catch (error) {
+    new Error(error.message);
+  }
+};
+
+export const orderCountriesAlf = (value) => {
+  try {
+    return { type: ORDER_ALF, payload: value };
+  } catch (error) {
+    new Error(error.message);
+  }
+};
+
+export const orderCountriesPopulation = (value) => {
+  try {
+    return { type: ORDER_POPULATION, payload: value };
+  } catch (error) {
+    new Error(error.message);
   }
 };
