@@ -26,30 +26,19 @@ const Pagination = ({
   };
 
   return (
-    <nav
-      class="pagination is-centered"
-      role="navigation"
-      aria-label="pagination"
-    >
-      <button
-        className={currentPage === 1 ? style.is_disable : style.is_enable}
-        onClick={onPreviousPage}
-        disabled={currentPage === 1}
-      >
-        Anterior
-      </button>
-      <button
-        className={
-          currentPage >= pageNumber.legth ? style.is_enable : style.is_disable
-        }
-        onClick={onNextPage}
-        disabled={currentPage >= pageNumber.length}
-      >
-        Siguiente
-      </button>
-      <ul class="pagination-list">
+    <nav className={style.container}>
+      <div className={style.buttons}>
+        <button
+          className={currentPage === 1 ? style.is_disable : style.is_enable}
+          onClick={onPreviousPage}
+          disabled={currentPage === 1}
+        >
+          Anterior
+        </button>
+      </div>
+      <ul className={style.pagination}>
         {pageNumber.map((p) => (
-          <li key={p}>
+          <li key={p} className={style.index}>
             <a
               className={p === currentPage ? style.current : ""}
               onClick={() => onSpecificPage(p)}
@@ -59,6 +48,17 @@ const Pagination = ({
           </li>
         ))}
       </ul>
+      <div>
+        <button
+          className={
+            currentPage >= pageNumber.legth ? style.is_enable : style.is_disable
+          }
+          onClick={onNextPage}
+          disabled={currentPage >= pageNumber.length}
+        >
+          Siguiente
+        </button>
+      </div>
     </nav>
   );
 };

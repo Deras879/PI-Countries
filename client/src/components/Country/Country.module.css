@@ -21,7 +21,7 @@ h3 {
 
 .container {
   border: 5px solid rgb(1, 10, 168);
-  margin: 10px; /* Centra el contenedor en la página */
+  margin: 10px;
 
   transition: all 0.3s ease;
 }
@@ -37,22 +37,10 @@ h3 {
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s;
+  font-size: 1.5em;
 }
 
 .container:hover .textBox {
   visibility: visible;
   opacity: 1;
-}
-@keyframes anim {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
 }

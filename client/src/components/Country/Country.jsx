@@ -17,9 +17,9 @@ function Country(props) {
         <img src={props.img} alt="Imagen" />
         <div className={style.textBox}>
           {" "}
-          <p className={style.name}>{props.name}</p>
-          <span>{props.capital}</span>
-          <p className={style.continent}>{props.continent}</p>
+          <p className={style.name}>Nombre: {props.name}</p>
+          <span>Capital: {props.capital}</span>
+          <p className={style.continent}>Continente: {props.continent}</p>
         </div>
       </div>
     </Link>
