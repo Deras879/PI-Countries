@@ -5,12 +5,6 @@
   max-height: 350px;
 }
 
-.img {
-  margin: 5px;
-  width: 350px;
-  height: 230px;
-  border: 3px solid blue;
-}
 
 h3 {
   font-weight: bold;
@@ -20,73 +14,35 @@ h3 {
   background-color: #ffffffab;
 } */
 
-.card {
-  width: 365px;
-  height: 285px;
-  /* max-width: 365px;
-  max-height: 350px; */
-  background: #6e6363;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: rgb(255, 255, 255);
-  transition: 0.2s ease-in-out;
-  margin: 15px;
-  pointer-events: auto;
+.container {
+  position: relative;
+  display: inline-block;
 }
 
-.img {
-  margin-top: 28px;
-  height: 40%;
-  position: absolute;
-  transition: 0.2s ease-in-out;
-  z-index: 1;
-  background-repeat: no-repeat;
+.container {
+  border: 5px solid rgb(1, 10, 168);
+  margin: 10px; /* Centra el contenedor en la página */
+
+  transition: all 0.3s ease;
 }
 
 .textBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  visibility: hidden;
   opacity: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  transition: 0.2s ease-in-out;
-  z-index: 2;
-  /* transform: translateY(-100px); */
+  transition: opacity 0.3s;
 }
 
-.textBox > .text {
-  font-weight: bold;
-}
-
-.textBox > .name {
-  font-size: 40px;
-}
-
-.textBox > .continent {
-  font-size: 40px;
-}
-
-.textBox > span {
-  font-size: 30px;
-  color: lightgrey;
-}
-
-.card:hover > .textBox {
+.container:hover .textBox {
+  visibility: visible;
   opacity: 1;
-  pointer-events: none;
 }
-
-.card:hover > .img {
-  height: 29%;
-  filter: opacity(0.5) blur(7px);
-  animation: anim 3s infinite;
-  pointer-events: auto;
-}
-
 @keyframes anim {
   0% {
     transform: translateY(0);

@@ -30,13 +30,13 @@ function NavBar() {
     <div className={style.container}>
       <div>
         <Link to="/Home">
-          <button>Home</button>
+          <button className={style.button}>Home</button>
         </Link>
         <Link to="/Activities">
-          <button>Activities</button>
+          <button className={style.button}>Activities</button>
         </Link>
         <Link to="/Form">
-          <button>Create Activity</button>
+          <button className={style.button}>Create Activity</button>
         </Link>
       </div>
       <div className={style.inputBox}>

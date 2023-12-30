@@ -1,15 +1,17 @@
 .container {
-  max-width: 97.3vw;
+  max-width: 100vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-direction: row-reverse;
   align-items: center;
   /* margin: 10px; */
   padding: 0;
   height: 65px;
-  background-image: url("https://th.bing.com/th/id/OIG.JFFgGzefdlFaIpeco9BG?w=1024&h=1024&rs=1&pid=ImgDetMain");
+  background-color: #494848;
+  /* background-image: url("https://th.bing.com/th/id/OIG.JFFgGzefdlFaIpeco9BG?w=1024&h=1024&rs=1&pid=ImgDetMain"); */
 }
 
-button {
+.button {
   --color: #560bad;
   font-family: inherit;
   display: inline-block;
@@ -28,7 +30,7 @@ button {
   color: var(--color);
 }
 
-button:before {
+.button:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -38,22 +40,22 @@ button:before {
   border-radius: 50%;
 }
 
-button:hover {
+.button:hover {
   color: #fff;
 }
 
-button:before {
+.button:before {
   top: 100%;
   left: 100%;
   transition: all 0.7s;
 }
 
-button:hover:before {
+.button:hover:before {
   top: -30px;
   left: -30px;
 }
 
-button:active:before {
+.button:active:before {
   background: #3a0ca3;
   transition: background 0s;
 }

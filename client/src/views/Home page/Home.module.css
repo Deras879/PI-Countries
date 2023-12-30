@@ -1,11 +1,12 @@
 .container {
   display: flex;
   align-items: center;
-  padding-top: 5px;
+  padding-top: 0;
   flex-direction: column;
-  background-image: url("https://th.bing.com/th/id/OIG.U2v_Q5U.QgEpgyrKODik?pid=ImgGn");
+  /* background-image: url("https://th.bing.com/th/id/OIG.U2v_Q5U.QgEpgyrKODik?pid=ImgGn"); */
+
+  background-image: url("https://i.pinimg.com/originals/32/59/66/325966bd10fd41ae1b5756c5c3fecade.jpg");
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+
   background-repeat: no-repeat;
 }

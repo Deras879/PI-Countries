@@ -1,11 +1,11 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   box-sizing: content-box;
   flex-wrap: wrap;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 
   background-repeat: no-repeat;
 }

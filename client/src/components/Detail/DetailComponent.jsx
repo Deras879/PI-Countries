@@ -29,12 +29,12 @@ function Detail() {
             <h1>Nombre: {country.name}</h1>
             <h1>ID: {country.id}</h1>
           </div>
-          <img src={country.image} alt="" />
+          <img src={country.image} className={style.img} />
           <div className={style.details2}>
-            <p>Capital: {country.capital}</p>
-            <p>Población: {country.population}</p>
-            <p>Región: {country.subRegion}</p>
-            <p>
+            <p className={style.p}>Capital: {country.capital}</p>
+            <p className={style.p}>Población: {country.population}</p>
+            <p className={style.p}>Región: {country.subRegion}</p>
+            <p className={style.p}>
               Área: {country.area} kms<sup>2</sup>
             </p>
           </div>
