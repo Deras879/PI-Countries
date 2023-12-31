@@ -1,0 +1,137 @@
+.major_container {
+  height: 100vh;
+  display: flex;
+  align-items: first baseline;
+  justify-content: center;
+  background-image: url("https://media.istockphoto.com/id/1343346538/es/v%C3%ADdeo/fondo-suave-4k-loopable.jpg?s=640x640&k=20&c=OlbFp4CsAHVIIcT-njhwHx6vY4-HllfKX9nEuoz2oBE=");
+}
+
+.container_name {
+  border: 3px solid orange;
+
+  width: 100%;
+}
+.name {
+  font-size: 2em;
+  margin-bottom: 0px;
+  background-color: #d6d6d6c5;
+  width: 98%;
+}
+
+.p {
+  margin-top: 0px;
+  color: red;
+  font-size: 15px;
+}
+
+/* seccion continente */
+.container_continent {
+  border: 3px solid orange;
+  margin-top: 5px;
+  background-color: #d6d6d6c5;
+}
+
+.continent {
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.continent_options {
+  background-color: #3c3c3c28;
+  font-size: 0.7em;
+}
+
+/* seccion de dificultad: */
+
+.dificultad_container {
+  margin-top: 5px;
+  border: 3px solid orange;
+  background-color: #d6d6d6c5;
+}
+.dificultad {
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dificultad_options {
+  background-color: #3c3c3c28;
+  font-size: 0.7em;
+  width: 65%;
+}
+
+/* seccion de hora */
+
+.container_hora {
+  border: 3px solid orange;
+  margin-top: 5px;
+  background-color: #d6d6d6c5;
+}
+
+.hora {
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hour {
+  color: black;
+  font-size: 0.7em;
+  background-color: #3c3c3c28;
+}
+
+.minutes {
+  font-size: 0.7em;
+  background-color: #3c3c3c28;
+}
+
+/* seccion temporada */
+
+.container_season {
+  border: 3px solid orange;
+  margin-top: 5px;
+  background-color: #d6d6d6c5;
+}
+
+.season {
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.season_options {
+  font-size: 0.7em;
+  background-color: #3c3c3c28;
+}
+
+/* seccion pais */
+
+.container_country {
+  border: 3px solid orange;
+  margin-top: 5px;
+  background-color: #d6d6d6c5;
+}
+
+.country {
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.country_options {
+  font-size: 0.7em;
+  background-color: #3c3c3c28;
+}
+
+.submit {
+  font-size: 2em;
+
+  margin-top: 50px;
+  margin-left: 40%;
+}
