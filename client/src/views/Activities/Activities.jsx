@@ -30,7 +30,7 @@ const Activities = () => {
                   return (
                     <span key={country.id}>
                       {country.name}
-                      {index !== activity.Countries.length - 1 ? ", " : ""}
+                      {index !== activity.Countries.length - 1 ? ", " : "."}
                     </span>
                   );
                 })}

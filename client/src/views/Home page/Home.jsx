@@ -58,34 +58,36 @@ function Home() {
   };
   return (
     <div className={style.container}>
-      <select onChange={handleFilterActivities}>
-        Filtrar
-        <option value="Todos">- Filtrar -</option>
-        <option value="Todos">Todos</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <select onChange={handleFilterContinent}>
-        <option value="Todos">- Filtrar Continente -</option>
-        <option value="Todos">Todos</option>
-        <option value="Asia">Asia</option>
-        <option value="Americas">America</option>
-        <option value="Europe">Europa</option>
-        <option value="Oceania">Oceania</option>
-      </select>
-      <select onChange={handleOrderPop}>
-        <option value="none">- Ordenar por Población-</option>
-        <option value="ASC">Ascendente</option>
-        <option value="DESC">Descendente</option>
-      </select>
-      <select onChange={handleOrderAlf}>
-        <option value="none">- Ordenar Alfabeticamente -</option>
-        <option value="ASC">Ascendente</option>
-        <option value="DESC">Descendente</option>
-      </select>
+      <div className={style.container_filters}>
+        <select onChange={handleFilterActivities} className={style.select}>
+          Filtrar
+          <option value="Todos">- Filtrar -</option>
+          <option value="Todos">Todos</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <select onChange={handleFilterContinent} className={style.select}>
+          <option value="Todos">- Filtrar Continente -</option>
+          <option value="Todos">Todos</option>
+          <option value="Asia">Asia</option>
+          <option value="Americas">America</option>
+          <option value="Europe">Europa</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+        <select onChange={handleOrderPop} className={style.select}>
+          <option value="none">- Ordenar por Población-</option>
+          <option value="ASC">Ascendente</option>
+          <option value="DESC">Descendente</option>
+        </select>
+        <select onChange={handleOrderAlf} className={style.select}>
+          <option value="none">- Ordenar Alfabeticamente -</option>
+          <option value="ASC">Ascendente</option>
+          <option value="DESC">Descendente</option>
+        </select>
+      </div>
       <Countries countries={searchCountries} />
     </div>
   );
